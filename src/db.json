@@ -1,0 +1,112 @@
+[
+    {
+        "productName": "Harley Davidson",
+        "price": "10000",
+        "engineCapacity": "300",
+        "power": "20",
+        "gears": "6",
+        "category": "Cafe Racer",
+        "weight": "190",
+        "image": "https://i.ibb.co/PzVxJxp/nick-mercer-n-XTu-Gf2-Ig9-M-unsplash.jpg",
+        "description": "Harley-Davidson, Inc., H-D, or Harley, is an American motorcycle manufacturer founded in 1903 in Milwaukee, Wisconsin. Along with Indian, it was one of two major American motorcycle manufacturers to survive the Great Depression. "
+    },
+    {
+        "productName": "Yamaha XSR 155",
+        "price": "2000",
+        "engineCapacity": "155",
+        "power": "19.3",
+        "gears": "6",
+        "category": "Cafe racer",
+        "weight": "134",
+        "image": "https://i.ibb.co/xXtN5kq/try-dimensi-w-wirawan-OPnazq-Pk-VZA-unsplash.jpg",
+        "description": "The XSR series is a very cool one from YAMAHA and is globally very renowned for the unique feature-set of these bikes. The bikes under this “XSR” name are neo-retro standard from the YAMAHA stable incorporating modern-day features and retro looks. YAMAHA has launched a new bike in its 150cc segment in the XSR clan: XSR 155. In Bangladesh, the XSR 155 bikes are imported by ACI Motors Ltd. See pictures of Yamaha XSR 155 here."
+    },
+    {
+        "productName": "Yamaha R15 V4",
+        "price": "5500",
+        "engineCapacity": "155",
+        "power": "19.3",
+        "gears": "6",
+        "category": "Sports",
+        "weight": "137",
+        "image": "https://i.ibb.co/d0nZBNX/anantha-krishnan-heg-Cu-Nh-AT-k-unsplash.jpg",
+        "description": "Three variants on offer: R15 V4, R15M, and a MotoGP Editio.All variants feature a premium USD fork, sleeker bodywork and a Bluetooth enabled console.The R15M, Racing Blue and MotoGP variant get traction control and a quickshifter as standard.The engine makes marginally less power than before."
+    },
+    {
+        "productName": "Yamaha MT-15 155",
+        "price": "5000",
+        "engineCapacity": "155",
+        "power": "19",
+        "gears": "6",
+        "category": "Cafe Racer",
+        "weight": "138",
+        "image": "https://i.ibb.co/vQVj5yF/rory-mckeever-XS3ypefe-Q2w-unsplash.jpg",
+        "description": "Yamaha MT-15 is a motorcycle manufactured by Yamaha since 2018. It based on the Yamaha YZF-R15, with 155cc water-cooled single-cylinder engine equipped with the mainframe and variable valve timing mechanism, the inverted front fork, etc."
+    },
+    {
+        "productName": "Suzuki GSX-R150",
+        "price": "4500",
+        "engineCapacity": "150",
+        "power": "18.9",
+        "gears": "6",
+        "category": "Sports",
+        "weight": "131",
+        "image": "https://i.ibb.co/0sgmZ0L/arpan-chatterjee-z7-Qwg-De0gq8-unsplash.jpg",
+        "description": "The Suzuki GSX-R Dual ABS line had defined sport bike performance for over 30 years, with more than a million sold worldwide. So the dedicated Suzuki engineers who have devoted their lives to the GSX-R Dual ABS take their responsibilities very seriously: every GSX-R Dual ABS is designed to be light and the best performing motorcycle in its class, in an unbeatable package."
+    },
+    {
+        "productName": "Honda CB150R Exmotion",
+        "price": "6000",
+        "engineCapacity": "150",
+        "power": "20",
+        "gears": "6",
+        "category": "Sports",
+        "weight": "123",
+        "image": "https://i.ibb.co/0sgmZ0L/arpan-chatterjee-z7-Qwg-De0gq8-unsplash.jpg",
+        "description": "CB150R ExMotion is a new innovation surprise from the Japanese motorcycle manufacturer Honda. It's a wonderful motorcycle that combines a powerful water-cooled engines and cool designs. Although the bike does not sell Honda officially in Bangladesh market, it is coming from Thailand directly through importers of the country. This bike is integrated in Thailand for South Asian market."
+    },
+    {
+        "productName": "Honda CBR 150R 2022",
+        "price": "5800",
+        "engineCapacity": "150",
+        "power": "17.1",
+        "gears": "6",
+        "category": "Sports",
+        "weight": "137",
+        "image": "https://i.ibb.co/JdfLk1R/deepak-choudhary-EOPf-Ew5-w-Ko-unsplash.jpg",
+        "description": "The Honda CB150R Streetfire is a CB series 150 cc single-cylinder standard/naked bike made by Astra Honda Motor in Indonesia since late 2012. It is positioned above the more economical Verza in Astra Honda Motor's sport motorcycles lineup."
+    },
+    {
+        "productName": "KTM Duke 200",
+        "price": "5000",
+        "engineCapacity": "200",
+        "power": "14.75",
+        "gears": "6",
+        "category": "Sports",
+        "weight": "159",
+        "image": "https://i.ibb.co/1bx3TYj/nick-mercer-JA5xl-I-NLBc-unsplash.jpg",
+        "description": "KTM Duke 125 is an introductory bike from the Austrian bike maker KTM. It's a sports bike that combines powerful engines, completely different style, sleek Sportive Look, different color and graphics. Only very few models are available in Bangladesh from this world famous company, among which KTM Duke 125 is one. Although its price is almost sky-high in the context of Bangladesh, it is also being added to the collection of amateur bikes here."
+    },
+    {
+        "productName": "royal enfield classic 350",
+        "price": "7000",
+        "engineCapacity": "350",
+        "power": "19.5",
+        "gears": "5",
+        "category": "Cafe Rac3er",
+        "weight": "195",
+        "image": "https://i.ibb.co/QpDzs0h/d-j-a-ASy-J2ehez-U-unsplash.jpg",
+        "description": "Royal Enfield Classic 350 is a cruiser bike available at a starting price of Rs. 1,84,374 in India. It is available in 5 variants and 11 colours with top variant price starting from Rs. 2,15,118. The Royal Enfield Classic 350 is powered by 349cc BS6 engine which develops a power of 20.2 bhp and a torque of 27 Nm."
+    },
+    {
+        "productName": "Suzuki Gixxer SF",
+        "price": "3000",
+        "engineCapacity": "155",
+        "power": "13.5",
+        "gears": "5",
+        "category": "Sports",
+        "weight": "148",
+        "image": "https://i.ibb.co/Pgd2XXt/arpan-chatterjee-ALrm5-Fy-IG0-U-unsplash.jpg",
+        "description": "Suzuki Gixxer SF is a sports bike available at a starting price of Rs. 1,30,925 in India. It is available in only 1 variant and 3 colours. The Suzuki Gixxer SF is powered by 155cc BS6 engine which develops a power of 13.4 bhp and a torque of 13.8 Nm. With both front and rear disc brakes, Suzuki Gixxer SF comes up with anti-locking braking system. This Gixxer SF bike weighs 148 kg and has a fuel tank capacity of 12 liters."
+    }
+]
