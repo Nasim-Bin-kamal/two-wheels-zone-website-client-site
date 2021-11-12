@@ -1,0 +1,7 @@
+.add-form {
+  max-width: 500px;
+  background-color: rgba(204, 235, 240, 0.438);
+}
+.btn-submit:hover {
+  background-color: #078fa1;
+}

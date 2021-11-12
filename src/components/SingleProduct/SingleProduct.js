@@ -1,9 +1,15 @@
 import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 import './SingleProduct.css';
 
 const SingleProduct = ({ product }) => {
-    const { productName, price, engineCapacity, power, image, category } = product || {};
+    const { _id, productName, price, engineCapacity, power, image, category } = product || {};
+    const history = useHistory();
+
+    const handleOrderProduct = (id) => {
+        history.push(`/products/order/${id}`);
+    }
 
     return (
         <div>
@@ -21,7 +27,9 @@ const SingleProduct = ({ product }) => {
                         <Card.Title className="fs-4 py-2 fw-bold"><span className="title">{productName}</span></Card.Title>
                         <div className="d-flex justify-content-between align-items-center">
                             <p className="pt-3">Category: {category}</p>
-                            <Button className="border-0  btn-book" variant="dark"><i className="far fa-check-circle"></i> Book Now</Button>
+                            <Button
+                                onClick={() => handleOrderProduct(_id)}
+                                className="border-0  btn-book" variant="dark"><i className="far fa-check-circle"></i> Book Now</Button>
                         </div>
                     </Card.Body>
                 </Card>

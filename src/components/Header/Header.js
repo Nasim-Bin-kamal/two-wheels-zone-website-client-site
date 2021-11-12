@@ -24,14 +24,15 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/home">Home</NavLink>
+                            <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/products">All Bikes</NavLink>
                             <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/about">About</NavLink>
-                            <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/products">All Products</NavLink>
                             <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/contact">Contact</NavLink>
 
                         </Nav>
                         <Nav>
                             <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/register">Register</NavLink>
                             <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/login">Login</NavLink>
+                            <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/dashboard">Dashboard</NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

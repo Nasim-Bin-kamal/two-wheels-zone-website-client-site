@@ -5,7 +5,7 @@ import './Login.css';
 
 const Login = () => {
     const handleSubmitLogin = (e) => {
-
+        e.preventDefault();
     }
     return (
         <div>
