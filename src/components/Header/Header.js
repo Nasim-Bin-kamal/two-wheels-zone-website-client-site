@@ -1,11 +1,13 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './Header.css'
 
 
 
 const Header = () => {
+    const { user, userSingOut } = useAuth();
 
     const activeStyle = {
         color: 'red',
@@ -30,9 +32,19 @@ const Header = () => {
 
                         </Nav>
                         <Nav>
-                            <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/register">Register</NavLink>
-                            <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/login">Login</NavLink>
-                            <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/dashboard">Dashboard</NavLink>
+                            {
+                                user?.email ? <div>
+                                    <span className="text-white">{user?.displayName}</span>
+                                    <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/dashboard">Dashboard</NavLink>
+                                    <Button className="rounded-pill px-3" variant="danger" onClick={userSingOut}>Log Out</Button>
+                                </div>
+                                    :
+                                    <div>
+                                        <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/register">Register</NavLink>
+                                        <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/login">Login</NavLink>
+                                    </div>
+                            }
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

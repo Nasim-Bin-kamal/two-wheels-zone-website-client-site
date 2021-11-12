@@ -12,6 +12,7 @@ import ManageOrders from '../ManageOrders/ManageOrders';
 import AddAdmin from '../AddAdmin/AddAdmin';
 import AddProduct from '../AddProduct/AddProduct';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import UpdateProductModal from '../../components/UpdateProductModal/UpdateProductModal';
 
 
 const Dashboard = () => {
@@ -62,6 +63,7 @@ const Dashboard = () => {
                     <li>
                         <NavLink to={`${url}/manageProducts`} className="nav-text text-decoration-none">Manage Products</NavLink>
                     </li>
+
                     {DashboardData.map((item, index) => {
                         return (
                             <li key={index} className={item.cName}>
@@ -82,6 +84,7 @@ const Dashboard = () => {
                 <Route path={`${path}/addAdmin`} component={AddAdmin} />
                 <Route path={`${path}/addProduct`} component={AddProduct} />
                 <Route path={`${path}/manageProducts`} component={ManageProducts} />
+                <Route path={`${path}/update/:id`} component={UpdateProductModal} />
             </Switch>
         </div >
     );

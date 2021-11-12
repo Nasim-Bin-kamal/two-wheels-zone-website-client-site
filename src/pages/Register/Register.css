@@ -1,12 +1,12 @@
 .form-title {
-  color: coral;
+  color: #08a2b6;
 }
 .user-form {
   max-width: 450px;
-  background-color: rgb(230, 221, 221);
+  background-color: rgb(221, 229, 230);
 }
 .btn-submit {
-  background-color: rgb(252, 134, 92);
+  background-color: #078fa1;
 }
 .fa-google {
   color: #f74040;

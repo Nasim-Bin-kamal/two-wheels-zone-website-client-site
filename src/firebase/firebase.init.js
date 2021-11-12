@@ -5,4 +5,4 @@ const initializeFirebase = () => {
     initializeApp(firebaseConfig);
 }
 
-export default initializeFirebase();
+export default initializeFirebase;
