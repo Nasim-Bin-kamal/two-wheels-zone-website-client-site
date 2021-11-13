@@ -4,3 +4,6 @@
 .customer {
   color: #0ac7e0;
 }
+.ratings span {
+  margin-left: 0 !important;
+}

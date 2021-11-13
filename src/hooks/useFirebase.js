@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import initializeFirebase from '../firebase/firebase.init';
-import { getAuth, GoogleAuthProvider, GithubAuthProvider, signInWithPopup, createUserWithEmailAndPassword, sendEmailVerification, updateProfile, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, GithubAuthProvider, signInWithPopup, createUserWithEmailAndPassword, getIdToken, sendEmailVerification, updateProfile, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 
 
 initializeFirebase();
@@ -10,6 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [errorMsg, setErrorMsg] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [admin, setAdmin] = useState(false);
 
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -18,29 +19,38 @@ const useFirebase = () => {
     //Register user by email and password
 
     const registerUser = (email, password, name, location, history) => {
+
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setErrorMsg('');
-                verifyEmail();
 
-                //set user
-                const newUser = { email, displayName: name };
+                //set user name
+                const newUser = { email, displayName: name }
                 setUser(newUser);
 
                 //save user data
                 saveUserData(email, name, 'POST');
 
-                //update user name and send to firebase
-                UpdateUserProfile();
+                verifyEmail();
 
-                //redirect user
+                //send name to firebase after creation
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                }).then(() => {
+                    //profile updated
+                }).catch(error => {
+                    setErrorMsg(error.message);
+                });
+
+                //for redirect user
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
+
                 setUser(result.user);
             }).catch(error => {
                 setErrorMsg(error.message);
-
+                // console.log(error.message);
             }).finally(() => {
                 setIsLoading(false);
             });
@@ -54,18 +64,7 @@ const useFirebase = () => {
             });
     }
 
-    //set user name on profile
-    const UpdateUserProfile = (name) => {
-        updateProfile(auth.currentUser, {
-            displayName: name
-        }).then(() => {
-            // const newUser = { ...user, displayName: name };
-            // setUser(newUser);
-            // window.location.reload();
-        }).catch(error => {
-            setErrorMsg(error.message);
-        });
-    }
+
 
 
     //sign in with email and password
@@ -74,7 +73,7 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 //logged in
-
+                setUser(result?.user);
                 //redirect user
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
@@ -89,11 +88,14 @@ const useFirebase = () => {
 
     //user sign out
 
-    const userSingOut = () => {
+    const userSingOut = (location, history) => {
         setIsLoading(true);
         signOut(auth).then(() => {
             //signout successfull
             setErrorMsg('');
+            //redirect user
+            const destination = location?.state?.from || '/';
+            history.replace(destination);
         }).catch((error) => {
             setErrorMsg(error.message);
             //error happened
@@ -105,6 +107,8 @@ const useFirebase = () => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, user => {
             if (user) {
+                getIdToken(user)
+                    .then(idToken => localStorage.setItem('idToken', idToken));
                 setUser(user);
             }
             else {
@@ -113,7 +117,7 @@ const useFirebase = () => {
             setIsLoading(false);
         })
 
-        return () => unsubscribe;
+        return () => unsubscribe();
     }, [auth]);
 
 
@@ -175,6 +179,14 @@ const useFirebase = () => {
 
     }
 
+    // check admin info
+    useEffect(() => {
+        fetch(`https://hidden-cove-85165.herokuapp.com/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin));
+    }, [user.email]);
+
+
 
 
     return {
@@ -185,7 +197,8 @@ const useFirebase = () => {
         userSingOut,
         user,
         isLoading,
-        errorMsg
+        errorMsg,
+        admin
     }
 };
 

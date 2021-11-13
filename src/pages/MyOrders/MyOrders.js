@@ -25,7 +25,7 @@ const MyOrders = () => {
         });
     }
 
-    const handleCancelBooking = (id) => {
+    const handleCancelOrder = (id) => {
         const url = `http://localhost:5000/orders/${id}`;
         const proceed = window.confirm('Are you want to cancel this order');
         if (proceed) {
@@ -69,7 +69,7 @@ const MyOrders = () => {
                                     <td>{product?.orderDate}</td>
                                     <td>{product?.orderStatus}</td>
                                     <td className="d-flex align-items-center justify-content-around">
-                                        <GiCancel onClick={() => handleCancelBooking(product?._id)} className=" fs-4 cancel-btn" />
+                                        <GiCancel onClick={() => handleCancelOrder(product?._id)} className=" fs-4 cancel-btn" />
                                     </td>
                                 </tr>)
                             }

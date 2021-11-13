@@ -31,7 +31,7 @@ const Register = () => {
             return;
         }
 
-        registerUser(registerData?.email, registerUser?.password, location, history)
+        registerUser(registerData?.email, registerData?.password, registerData?.name, location, history)
 
     }
 

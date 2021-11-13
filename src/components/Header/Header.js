@@ -3,15 +3,21 @@ import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Header.css'
-
+import { useLocation, useHistory } from 'react-router';
 
 
 const Header = () => {
     const { user, userSingOut } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
 
     const activeStyle = {
         color: 'red',
         fontWeight: '600'
+    }
+
+    const handleSignOut = () => {
+        userSingOut(location, history);
     }
     return (
         <div>
@@ -36,7 +42,7 @@ const Header = () => {
                                 user?.email ? <div>
                                     <span className="text-white">{user?.displayName}</span>
                                     <NavLink className="mx-2 text-decoration-none text-white fs-5" activeStyle={activeStyle} to="/dashboard">Dashboard</NavLink>
-                                    <Button className="rounded-pill px-3" variant="danger" onClick={userSingOut}>Log Out</Button>
+                                    <Button className="rounded-pill px-3" variant="danger" onClick={handleSignOut}>Log Out</Button>
                                 </div>
                                     :
                                     <div>
