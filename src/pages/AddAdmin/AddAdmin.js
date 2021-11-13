@@ -21,7 +21,7 @@ const AddAdmin = () => {
     const handleSubmitAdmin = (e) => {
         const user = { email };
         e.preventDefault();
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://serene-fjord-11430.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('idToken')}`,

@@ -17,7 +17,7 @@ import DashboardHome from '../DashboardHome/DashboardHome';
 
 
 const Dashboard = () => {
-    const { userSingOut } = useAuth();
+    const { userSingOut, admin, user } = useAuth();
     const [Dashboard, setDashboard] = useState(false);
     const history = useHistory();
     const location = useLocation();
@@ -57,27 +57,31 @@ const Dashboard = () => {
                     <li>
                         <NavLink to={`${url}`} className="nav-text text-decoration-none">Dashboard Home</NavLink>
                     </li>
-                    <li>
-                        <NavLink to={`${url}/myOrders`} className="nav-text text-decoration-none">My Orders</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={`${url}/addReview`} className="nav-text text-decoration-none">Add Review</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={`${url}/payment`} className="nav-text text-decoration-none">Payment</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={`${url}/manageOrders`} className="nav-text text-decoration-none">Manage Orders</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={`${url}/addAdmin`} className="nav-text text-decoration-none">Add Admin</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={`${url}/addProduct`} className="nav-text text-decoration-none">Add Product</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={`${url}/manageProducts`} className="nav-text text-decoration-none">Manage Products</NavLink>
-                    </li>
+                    {user && <div>
+                        <li>
+                            <NavLink to={`${url}/myOrders`} className="nav-text text-decoration-none">My Orders</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to={`${url}/addReview`} className="nav-text text-decoration-none">Add Review</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to={`${url}/payment`} className="nav-text text-decoration-none">Payment</NavLink>
+                        </li>
+                    </div>}
+                    {admin && <div>
+                        <li>
+                            <NavLink to={`${url}/manageOrders`} className="nav-text text-decoration-none">Manage Orders</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to={`${url}/addAdmin`} className="nav-text text-decoration-none">Add Admin</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to={`${url}/addProduct`} className="nav-text text-decoration-none">Add Product</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to={`${url}/manageProducts`} className="nav-text text-decoration-none">Manage Products</NavLink>
+                        </li>
+                    </div>}
                     <Button onClick={handleSignOut} className="mx-2 px-4">Log Out</Button>
                 </ul>
             </Nav>

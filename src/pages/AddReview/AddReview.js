@@ -30,7 +30,7 @@ const AddReview = () => {
         data.email = user?.email;
         data.rating = rating;
 
-        axios.post('http://localhost:5000/reviews', data)
+        axios.post('https://serene-fjord-11430.herokuapp.com/reviews', data)
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {

@@ -17,7 +17,7 @@ const ManageProducts = () => {
     }
 
     const handleDeleteProduct = (id) => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://serene-fjord-11430.herokuapp.com/products/${id}`;
         const proceed = window.confirm('Are you want to delete this product');
         if (proceed) {
             axios.delete(url)

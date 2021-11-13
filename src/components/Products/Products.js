@@ -1,11 +1,22 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
+import useAuth from '../../hooks/useAuth';
 import useProducts from '../../hooks/useProducts';
 import SingleProduct from '../SingleProduct/SingleProduct';
 import './Products.css';
 
 const Products = () => {
     const [products] = useProducts();
+    const { isLoading } = useAuth();
+    if (isLoading) {
+        return (
+            <div className="d-flex justify-content-center my-5 loading">
+                <Spinner className="" animation="grow" variant="danger" />
+                <Spinner className="" animation="grow" variant="warning" />
+                <Spinner className="" animation="grow" variant="success" />
+            </div>
+        )
+    }
 
     return (
         <div className="allProducts-section">

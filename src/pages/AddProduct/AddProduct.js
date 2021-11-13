@@ -10,7 +10,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/products', data)
+        axios.post('https://serene-fjord-11430.herokuapp.com/products', data)
             .then(res => {
                 console.log(res.data);
                 if (res?.data?.insertedId) {

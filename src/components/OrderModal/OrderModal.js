@@ -15,7 +15,7 @@ const OrderModal = ({ showModal, handleModalClose, product, orderNotify }) => {
         data.orderDate = new Date().toLocaleDateString();
         data.orderedProduct = { ...product };
 
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://serene-fjord-11430.herokuapp.com/orders', data)
             .then(res => {
                 console.log(res.data);
                 if (res.data?.insertedId) {

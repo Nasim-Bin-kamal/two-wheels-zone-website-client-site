@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Spinner } from 'react-bootstrap';
 import Rating from 'react-rating';
+import useAuth from '../../hooks/useAuth';
 import './CustomerReview.css';
 
 const CustomerReview = () => {
     const [reviews, setReviews] = useState([]);
+    const { isLoading } = useAuth();
+
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://serene-fjord-11430.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data));
     }, []);
+    if (isLoading) {
+        return (
+            <div className="d-flex justify-content-center my-5 loading">
+                <Spinner className="" animation="grow" variant="danger" />
+                <Spinner className="" animation="grow" variant="warning" />
+                <Spinner className="" animation="grow" variant="success" />
+            </div>
+        )
+    }
 
     return (
         <div className="review-section">
