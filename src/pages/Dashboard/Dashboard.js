@@ -13,6 +13,7 @@ import AddProduct from '../AddProduct/AddProduct';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import useAuth from '../../hooks/useAuth';
 import AdminRoute from '../../components/AdminRoute/AdminRoute';
+import DashboardHome from '../DashboardHome/DashboardHome';
 
 
 const Dashboard = () => {
@@ -54,7 +55,10 @@ const Dashboard = () => {
                         <NavLink to="/products" className="nav-text text-decoration-none">Products</NavLink>
                     </li>
                     <li>
-                        <NavLink to={`${url}`} className="nav-text text-decoration-none">My Orders</NavLink>
+                        <NavLink to={`${url}`} className="nav-text text-decoration-none">Dashboard Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={`${url}/myOrders`} className="nav-text text-decoration-none">My Orders</NavLink>
                     </li>
                     <li>
                         <NavLink to={`${url}/addReview`} className="nav-text text-decoration-none">Add Review</NavLink>
@@ -83,6 +87,9 @@ const Dashboard = () => {
             <Switch>
 
                 <Route exact path={path}>
+                    <DashboardHome />
+                </Route>
+                <Route exact path={`${path}/myOrders`}>
                     <MyOrders />
                 </Route>
                 <Route path={`${path}/addReview`}>

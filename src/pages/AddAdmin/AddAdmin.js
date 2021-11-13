@@ -34,6 +34,7 @@ const AddAdmin = () => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
                     adminNotify();
+                    e.target.reset();
 
                 }
             });
