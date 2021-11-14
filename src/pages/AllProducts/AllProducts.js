@@ -6,12 +6,12 @@ import './AllProducts.css';
 
 
 const AllProducts = () => {
+
     return (
         <div>
             <Header />
             <Products />
             <Footer />
-
         </div>
     );
 };

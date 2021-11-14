@@ -7,6 +7,7 @@ import useAuth from '../../hooks/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
     const { user, isLoading, admin } = useAuth();
+
     if (isLoading) {
         return (
             <div className="d-flex justify-content-center my-5 loading">
@@ -19,10 +20,10 @@ const AdminRoute = ({ children, ...rest }) => {
     return (
         <Route
             {...rest}
-            render={({ location }) => user.email && admin ?
+            render={({ location }) => user?.email && admin ?
                 children :
                 <Redirect to={{
-                    pathname: "/",
+                    pathname: "/dashboard",
                     state: { from: location }
                 }}></Redirect>
             }

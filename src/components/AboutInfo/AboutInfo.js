@@ -37,12 +37,11 @@ const AboutInfo = () => {
                         </div>
                         <Row xs={1} md={2} lg={3} className="pb-5 mx-auto">
                             {
-                                teamMemberInfo?.map(singleMember => <Col className="mx-auto my-3">
+                                teamMemberInfo?.map(singleMember => <Col key={singleMember?.id} className="mx-auto my-3">
                                     <div className="mx-auto shadow-sm p-3 bg-white  rounded-3">
                                         <img className="img-fluid w-100 mx-auto pb-3" src={singleMember?.image} alt="" />
                                         <h5 className="text-secondary">{singleMember?.designation}</h5>
                                         <h3 className="director-name">{singleMember?.name}</h3>
-
                                     </div>
                                 </Col>)
                             }

@@ -17,7 +17,7 @@ const OrderModal = ({ showModal, handleModalClose, product, orderNotify }) => {
 
         axios.post('https://serene-fjord-11430.herokuapp.com/orders', data)
             .then(res => {
-                console.log(res.data);
+
                 if (res.data?.insertedId) {
                     handleModalClose();
                     reset();

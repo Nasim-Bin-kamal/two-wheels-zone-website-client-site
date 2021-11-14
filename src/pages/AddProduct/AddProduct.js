@@ -9,10 +9,8 @@ import { ToastContainer, toast } from 'react-toastify';
 const AddProduct = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data);
         axios.post('https://serene-fjord-11430.herokuapp.com/products', data)
             .then(res => {
-                console.log(res.data);
                 if (res?.data?.insertedId) {
                     successNotify();
                     reset();
@@ -23,8 +21,9 @@ const AddProduct = () => {
     };
 
     const successNotify = () => {
-        toast('Successfully Added a Product', {
-            autoClose: 2000
+        toast.success('Successfully Added a Product', {
+            autoClose: 2000,
+            position: 'top-center'
         });
     }
     console.log(errors);

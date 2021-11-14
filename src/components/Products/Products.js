@@ -10,10 +10,10 @@ const Products = () => {
     const { isLoading } = useAuth();
     if (isLoading) {
         return (
-            <div className="d-flex justify-content-center my-5 loading">
-                <Spinner className="" animation="grow" variant="danger" />
-                <Spinner className="" animation="grow" variant="warning" />
-                <Spinner className="" animation="grow" variant="success" />
+            <div className="d-flex justify-content-center py-5" style={{ margin: "300px 0" }}>
+                <Spinner animation="grow" variant="danger" />
+                <Spinner animation="grow" variant="warning" />
+                <Spinner animation="grow" variant="success" />
             </div>
         )
     }

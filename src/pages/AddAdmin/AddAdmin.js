@@ -6,15 +6,23 @@ import './AddAdmin.css';
 const AddAdmin = () => {
     const [email, setEmail] = useState('');
 
+
     const handleOnBlur = (e) => {
         setEmail(e.target.value);
     }
-    console.log(email);
 
-    const adminNotify = () => {
+
+    const successNotify = () => {
         toast.success('Admin created successfully!!', {
             position: 'top-center',
             autoClose: 2000
+        });
+    }
+
+    const errorNotify = () => {
+        toast.error('Admin can not created or already an admin', {
+            position: 'top-center',
+            autoClose: 3000
         });
     }
 
@@ -33,10 +41,12 @@ const AddAdmin = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    adminNotify();
-                    e.target.reset();
-
+                    successNotify();
                 }
+                else {
+                    errorNotify();
+                }
+                e.target.reset();
             });
     }
 
@@ -47,11 +57,11 @@ const AddAdmin = () => {
             <Container>
                 <ToastContainer />
                 <h2 className="text-center mx-auto title py-5">Add New Admin</h2>
-                <div className="add-admin-section mx-auto my-4 p-3">
+                <div className="add-admin-section rounded-3 mx-auto my-4 p-3">
                     <Form onSubmit={handleSubmitAdmin}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control onBlur={handleOnBlur} type="email" name="email" placeholder="Enter email" />
+                            <Form.Control onBlur={handleOnBlur} type="email" name="email" placeholder="Enter email" required />
 
                         </Form.Group>
                         <Button className="btn-submit mt-3 border-0 fw-bold px-3 w-50 mx-auto  d-flex justify-content-center align-items-center" variant="dark" type="submit">

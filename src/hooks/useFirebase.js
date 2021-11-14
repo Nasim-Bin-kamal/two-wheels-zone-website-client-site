@@ -65,8 +65,6 @@ const useFirebase = () => {
     }
 
 
-
-
     //sign in with email and password
     const userSignIn = (email, password, location, history) => {
         setIsLoading(true);
@@ -117,7 +115,7 @@ const useFirebase = () => {
             setIsLoading(false);
         })
 
-        return () => unsubscribe();
+        return () => unsubscribe;
     }, [auth]);
 
 
@@ -179,12 +177,12 @@ const useFirebase = () => {
 
     }
 
-    // check admin info
+    //check admin info
     useEffect(() => {
-        fetch(`https://hidden-cove-85165.herokuapp.com/users/${user?.email}`)
+        fetch(`https://serene-fjord-11430.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin));
-    }, [user.email]);
+    }, [user?.email]);
 
 
 

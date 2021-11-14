@@ -8,10 +8,10 @@ const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
     if (isLoading) {
         return (
-            <div className="d-flex justify-content-center my-5 loading">
-                <Spinner className="" animation="grow" variant="danger" />
-                <Spinner className="" animation="grow" variant="warning" />
-                <Spinner className="" animation="grow" variant="success" />
+            <div className="d-flex justify-content-center my-5 ">
+                <Spinner animation="grow" variant="danger" />
+                <Spinner animation="grow" variant="warning" />
+                <Spinner animation="grow" variant="success" />
             </div>
         )
     }

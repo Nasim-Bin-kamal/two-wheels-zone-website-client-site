@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useRouteMatch, Switch, Route, useHistory, useLocation } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
+import { FaSignOutAlt } from "react-icons/fa";
 import './Dashboard.css';
 import { Button, Nav } from 'react-bootstrap';
 import MyOrders from '../MyOrders/MyOrders';
@@ -57,7 +58,7 @@ const Dashboard = () => {
                     <li>
                         <NavLink to={`${url}`} className="nav-text text-decoration-none">Dashboard Home</NavLink>
                     </li>
-                    {user && <div>
+                    {(user && !admin) && <div>
                         <li>
                             <NavLink to={`${url}/myOrders`} className="nav-text text-decoration-none">My Orders</NavLink>
                         </li>
@@ -82,7 +83,9 @@ const Dashboard = () => {
                             <NavLink to={`${url}/manageProducts`} className="nav-text text-decoration-none">Manage Products</NavLink>
                         </li>
                     </div>}
-                    <Button onClick={handleSignOut} className="mx-2 px-4">Log Out</Button>
+                    <Button onClick={handleSignOut} className="m-3 rounded-pill px-4 border-3" size="sm" variant="outline-danger">
+                        <FaSignOutAlt className="me-2" />
+                        Log Out</Button>
                 </ul>
             </Nav>
 
@@ -93,7 +96,7 @@ const Dashboard = () => {
                 <Route exact path={path}>
                     <DashboardHome />
                 </Route>
-                <Route exact path={`${path}/myOrders`}>
+                <Route path={`${path}/myOrders`}>
                     <MyOrders />
                 </Route>
                 <Route path={`${path}/addReview`}>

@@ -79,7 +79,6 @@ const ContactInfo = () => {
                                     </div>
                                 </div>
                             </Col>
-
                         </Row>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel, Button } from 'react-bootstrap';
+import Typical from 'react-typical';
 import './Slider.css';
 
 const Slider = () => {
@@ -13,7 +14,14 @@ const Slider = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption className="caption">
-                        <h1>Upcoming Sports Bikes</h1>
+                        <h1>Upcoming Sports Bikes
+                            <Typical
+                                steps={[' Yamaha R14 V4', 1000, ' Royal Enfield 500', 1000, ' KTM Duke 200', 1000]}
+                                loop={Infinity}
+                                wrapper="p"
+                            />
+
+                        </h1>
                         <p className="fs-4 ">Prebook is gooing on</p>
                         <Button className="text-white border border-2 px-4 py-2 slider-btn" variant="outside-light">Prebook Now <i className="fas fa-angle-double-right"></i></Button>
                     </Carousel.Caption>
@@ -26,7 +34,13 @@ const Slider = () => {
                     />
 
                     <Carousel.Caption className="caption">
-                        <h1>Latest Offers in Sports Bikes</h1>
+                        <h1>Latest Offers
+                            <Typical
+                                steps={[' In Sports Bikes', 1000, ' And Commuter Bikes', 1000]}
+                                loop={Infinity}
+                                wrapper="b"
+                            />
+                        </h1>
                         <p className="fs-4">Upto 15% discount is ongoing</p>
                         <Button className="text-white border border-2 px-4 py-2 slider-btn" variant="outside-light">Order Now <i className="fas fa-angle-double-right"></i></Button>
                     </Carousel.Caption>
@@ -39,7 +53,13 @@ const Slider = () => {
                     />
 
                     <Carousel.Caption className="caption">
-                        <h1>Best Bike Collections</h1>
+                        <h1>
+                            <Typical
+                                steps={['Best Bike Collections', 1000, 'Best After Sales Service', 1000, 'Best Price', 1000]}
+                                loop={Infinity}
+                                wrapper="b"
+                            />
+                        </h1>
                         <p className="fs-4">We have best and unique bikes.</p>
                         <Button className="text-white border border-2 px-4 py-2 slider-btn" variant="outside-light">Order Now <i className="fas fa-angle-double-right"></i></Button>
                     </Carousel.Caption>
