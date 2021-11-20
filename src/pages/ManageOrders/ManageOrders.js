@@ -81,7 +81,6 @@ const ManageOrders = () => {
                                 <th>Customer Name</th>
                                 <th>Customer Email</th>
                                 <th>Order Status</th>
-
                                 <th>Approve/ Cancel Order</th>
                             </tr>
                         </thead>

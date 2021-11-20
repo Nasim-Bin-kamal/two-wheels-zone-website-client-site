@@ -21,22 +21,21 @@ const ContactInfo = () => {
                             <div className="mx-auto">
                                 <h5 className="short-info">Talk with our team</h5>
                                 <h1 className="text-secondary fw-bold">Any Question?</h1>
-                                <h1 className="text-secondary fw-bold">Free to Contact Us</h1>
+                                <h1 className="text-secondary fw-bold">Feel Free to Contact Us</h1>
                             </div>
                         </Col>
                         <Col>
                             <div className=" mx-auto my-3 p-3 rounded-3 shadow-sm">
                                 <form className="mx-auto d-flex justify-content-center align-items-center flex-column w-100" onSubmit={handleSubmit(onSubmit)}>
-                                    <Row className="mx-auto w-100 ">
+                                    <Row className="mx-auto w-100">
                                         <Col className="p-0 me-3">
                                             <input className="w-100 input-bg  mx-auto my-2 p-3 border border-2 rounded-3" type="text" placeholder="Full name" {...register("visitorName", { required: true, maxLength: 80 })} />
-
                                         </Col>
                                         <Col className="p-0">
                                             <input className="w-100 input-bg  mx-auto my-2 p-3 border border-2 rounded-3" type="text" placeholder="Email" {...register("visitorEmail", { required: true, pattern: /^\S+@\S+$/i })} />
                                         </Col>
                                     </Row>
-                                    <textarea className="w-100 input-bg  mx-auto my-3 p-3 border border-2 rounded-3" placeholder="Write commnet"{...register("visitorComment", { required: true })} />
+                                    <textarea className="w-100 input-bg  mx-auto my-3 p-3 border border-2 rounded-3" placeholder="Write comment"{...register("visitorComment", { required: true })} />
 
                                     <Button className="btn-submit border-0 w-50 fs-4" variant="dark" type="submit">Submit</Button>
                                 </form>

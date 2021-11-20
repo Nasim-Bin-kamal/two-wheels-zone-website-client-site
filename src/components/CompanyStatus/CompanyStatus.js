@@ -34,8 +34,8 @@ const CompanyStatus = () => {
         <div className="status-section">
             <Container>
                 <div className="text-center mx-auto">
-                    <h5 className="short-info">Why Travel Time</h5>
-                    <h2 className="text-secondary fw-bold">Why You Are Travel With Us</h2>
+                    <h5 className="short-info">Why Two Wheels Zone</h5>
+                    <h2 className="text-secondary fw-bold">Why You Choose Us For Buying Bike</h2>
                 </div>
                 <div className="py-5 px-auto mx-auto">
                     <Row xs={1} md={2} lg={4}>
