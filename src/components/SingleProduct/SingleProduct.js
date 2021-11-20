@@ -24,7 +24,7 @@ const SingleProduct = ({ product }) => {
                             <p className="text-secondary fw-bold">{engineCapacity} CC / {power} bhp</p>
                         </div>
 
-                        <Card.Title className="fs-4 py-2 fw-bold"><span className="title">{productName}</span></Card.Title>
+                        <Card.Title className="fs-4 py-2 fw-bold product-title">{productName}</Card.Title>
                         <div className="d-flex justify-content-between align-items-center">
                             <p className="pt-3">Category: {category}</p>
                             <Button
