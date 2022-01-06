@@ -93,7 +93,6 @@ const CustomerReview = () => {
                                                 fullSymbol="fas fa-star text-warning m-0 p-0"
                                             ></Rating>
                                         </div>
-
                                     </Card>
                                 </div>
                             ))
