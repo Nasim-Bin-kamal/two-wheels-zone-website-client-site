@@ -20,8 +20,8 @@ const Footer = () => {
                         </div>
                     </Col>
                     <Col className="mx-auto">
-                        <h5 className="text-white">Quick Navigation</h5>
-                        <ul className="quickNav">
+                        <h5 className="text-white">Quick Nav</h5>
+                        <ul className="quickNav ps-0">
                             <li>
                                 <NavLink className="menu-item" to="/home">Home</NavLink>
                             </li>
@@ -32,7 +32,7 @@ const Footer = () => {
                                 <NavLink className="menu-item" to="/contact">Contact</NavLink>
                             </li>
                             <li>
-                                <NavLink className="menu-item" to="/registerLogin">Login</NavLink>
+                                <NavLink className="menu-item" to="/login">Login</NavLink>
                             </li>
 
                         </ul>
