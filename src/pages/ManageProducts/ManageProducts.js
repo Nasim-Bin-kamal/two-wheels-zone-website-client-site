@@ -73,9 +73,6 @@ const ManageProducts = () => {
 
                 </div>
 
-
-
-
             </Container>
         </div>
     );
