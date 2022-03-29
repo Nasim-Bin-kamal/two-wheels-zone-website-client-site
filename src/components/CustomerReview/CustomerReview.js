@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row, Spinner, Card } from 'react-bootstrap';
+import { Container, Spinner, Card } from 'react-bootstrap';
 import Rating from 'react-rating';
 import useAuth from '../../hooks/useAuth';
 import './CustomerReview.css';
