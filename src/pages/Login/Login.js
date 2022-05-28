@@ -57,8 +57,8 @@ const Login = () => {
                         </Form.Group>
 
 
-                        <Button className="btn-submit border-0 fw-bold px-3 w-50 mt-3 mx-auto mt-4 d-flex justify-content-center align-items-center" variant="dark" type="submit">
-                            Login
+                        <Button className="btn-submit border-0 fw-bold px-3 w-100 mt-3 mx-auto mt-4 d-flex justify-content-center align-items-center" variant="dark" type="submit">
+                            LOGIN
                         </Button>
 
                     </Form>

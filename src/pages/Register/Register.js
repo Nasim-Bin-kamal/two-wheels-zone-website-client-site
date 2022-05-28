@@ -45,7 +45,7 @@ const Register = () => {
     return (
         <div>
             <Container>
-                <h2 className="text-center mx-auto my-5 form-title">Please Register First</h2>
+                <h2 className="text-center mx-auto my-3 form-title">Please Register First</h2>
                 <div className="user-form mx-auto my-5 p-3 rounded-3 shadow-sm">
                     {
                         errorMsg && <Alert variant="danger" dismissible >{errorMsg}</Alert>
@@ -70,8 +70,8 @@ const Register = () => {
                         </Form.Group>
 
 
-                        <Button className="btn-submit border-0 fw-bold px-3 w-50 mt-3 mx-auto mt-4 d-flex justify-content-center align-items-center" variant="success" type="submit">
-                            Registration
+                        <Button className="btn-submit border-0 fw-bold px-3 w-100 mt-3 mx-auto mt-4 d-flex justify-content-center align-items-center" variant="success" type="submit">
+                            REGISTER
                         </Button>
 
                     </Form>
@@ -82,7 +82,7 @@ const Register = () => {
                     </div>
 
                     <div className="mb-3 d-flex align-items-center justify-content-center">
-                        <NavLink className="text-decoration-none" to='/login'>Alredy have an account? Please Login</NavLink>
+                        <NavLink className="text-decoration-none" to='/login'>Already have an account? Please Login</NavLink>
                     </div>
 
                 </div>
